@@ -1,0 +1,207 @@
+.container {
+    max-width: 46%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .heading {
+    color: #333;
+  }
+  
+  .card {
+    background: #f0f0f0;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+  }
+  .card h3 {
+    color: black; /* Default color for total users */
+  }
+  
+  .card h3 span.deletedCount {
+    color: red; /* Change color of deleted accounts count to red */
+  }
+  
+  
+  .buttonsRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+    background-color: #b8b7b7;
+  }
+  
+  .input {
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 70%;
+    font-size: 15px;
+  }
+  
+  .addButton, .toggleButton {
+    padding: 10px 15px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .userList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .userItem {
+    display: flex;
+    justify-content: space-between;
+    background: #f9f9f9;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  .deleteButton {
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .confirmationDialog {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .confirmButton {
+    padding: 10px 15px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .cancelButton {
+    padding: 10px 15px;
+    background-color: #050505;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .historySection {
+    margin-top: 30px;
+    text-align: left;
+  }
+  
+  .historyList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .historyItem {
+    padding: 5px;
+    background: #ffe6e6;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    border: 1px solid #ffcccc;
+  }
+
+  /* Default styles for desktop and larger screens */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Styles for Android Tablets (portrait and landscape) */
+@media (max-width: 768px) and (min-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  .card {
+    font-size: 18px;
+  }
+
+  .toggleButton {
+    padding: 8px 12px;
+  }
+
+  .inputContainer {
+    padding: 10px;
+  }
+
+  .userList {
+    font-size: 16px;
+  }
+}
+
+/* Styles for Laptops (larger screens) */
+@media (max-width: 1200px) and (min-width: 1024px) {
+  .container {
+    padding: 20px;
+  }
+
+  .card {
+    font-size: 20px;
+  }
+
+  .toggleButton {
+    padding: 10px 15px;
+  }
+
+  .inputContainer {
+    padding: 15px;
+  }
+
+  .userList {
+    font-size: 18px;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .card {
+    font-size: 16px;
+  }
+
+  .toggleButton {
+    padding: 5px 10px;
+  }
+
+  .inputContainer {
+    padding: 8px;
+  }
+
+  .userList {
+    font-size: 14px;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+}
+
+  

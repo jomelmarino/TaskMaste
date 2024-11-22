@@ -10,28 +10,49 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate(); // Initialize the navigate function
 
+  // Function to check if the user is admin (for simplicity, this checks if the username matches 'admin')
+  const isAdmin = (username) => {
+    // Ideally, the admin check should be based on a backend call
+    return username.toLowerCase() === 'admin'; // Example check, you may modify this to check email or use a backend validation
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Logging in with', username, password);
-    // Redirect to TaskManager page after successful login
-    navigate('/taskmanager');
+
+    // Perform admin check
+    if (isAdmin(username)) {
+      // Redirect admin to TaskManager
+      navigate('/taskmanager');
+    } else {
+      // Redirect regular user to Home
+      navigate('/home');
+    }
   };
 
   const handleGoogleLogin = () => {
     console.log('Logging in with Google');
-    // Redirect to TaskManager page after successful Google login
-    navigate('/taskmanager');
+    // Assuming Google login returns a username or ID, we should also perform an admin check
+    if (isAdmin(username)) {
+      navigate('/taskmanager');
+    } else {
+      navigate('/home');
+    }
   };
 
   const handleGitHubLogin = () => {
     console.log('Logging in with GitHub');
-    // Redirect to TaskManager page after successful GitHub login
-    navigate('/taskmanager');
+    // Assuming GitHub login returns a username or ID, perform admin check
+    if (isAdmin(username)) {
+      navigate('/taskmanager');
+    } else {
+      navigate('/home');
+    }
   };
 
   const handleCreateAccount = () => {
     // Navigate to the sign-up page
-    navigate('/signup'); 
+    navigate('/signup');
   };
 
   return (
@@ -40,7 +61,7 @@ const Login = () => {
       <div className="left-side">
         <h1>Your personal productivity</h1>
         <h1>companion.</h1>
-        
+
         <img
           src={backgroundImage}
           alt="Background"
@@ -57,7 +78,7 @@ const Login = () => {
             <input
               type="text"
               value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)} // Update username state
               required
             />
           </div>
@@ -67,7 +88,7 @@ const Login = () => {
             <input
               type="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)} // Update password state
               required
             />
           </div>
@@ -77,10 +98,9 @@ const Login = () => {
             style={{
                 borderRadius: '40px' // Only adding border-radius
             }}
-            >
+          >
             Log In
           </button>
-
 
           <div className="divider">
             <div className="hr-wrapper">
@@ -93,9 +113,9 @@ const Login = () => {
           {/* Google Login Button with Logo */}
           <div className="social-buttons">
             <button
-                type="button"
-                onClick={handleGoogleLogin}
-                style={{
+              type="button"
+              onClick={handleGoogleLogin}
+              style={{
                 backgroundColor: 'gray', // Change the background color to gray
                 color: 'white', // Set text color to white
                 border: 'none',
@@ -111,26 +131,26 @@ const Login = () => {
                 marginBottom: '10px',
                 marginLeft: 'auto',
                 marginRight: 'auto',
-                }}
+              }}
             >
-                <img
+              <img
                 src={googleLogo}
                 alt="Google Logo"
                 style={{
-                    width: '30px',
-                    height: '25px',
-                    marginRight: '10px',
-                    borderRadius: '50%',
+                  width: '30px',
+                  height: '25px',
+                  marginRight: '10px',
+                  borderRadius: '50%',
                 }}
-                />
-                Continue with Google
+              />
+              Continue with Google
             </button>
 
             {/* GitHub Login Button with Logo */}
             <button
-                type="button"
-                onClick={handleGitHubLogin}
-                style={{
+              type="button"
+              onClick={handleGitHubLogin}
+              style={{
                 backgroundColor: '#333', // Keep the GitHub button as it is
                 color: 'white',
                 border: 'none',
@@ -145,22 +165,21 @@ const Login = () => {
                 cursor: 'pointer',
                 marginLeft: 'auto',
                 marginRight: 'auto',
-                }}
+              }}
             >
-                <img
+              <img
                 src={githubLogo}
                 alt="GitHub Logo"
                 style={{
-                    width: '30px',
-                    height: '25px',
-                    marginRight: '10px',
-                    borderRadius: '50%',
+                  width: '30px',
+                  height: '25px',
+                  marginRight: '10px',
+                  borderRadius: '50%',
                 }}
-                />
-                Continue with GitHub
+              />
+              Continue with GitHub
             </button>
-            </div>
-
+          </div>
 
           {/* Create New Account Link */}
           <p className="create-account" onClick={handleCreateAccount}>
