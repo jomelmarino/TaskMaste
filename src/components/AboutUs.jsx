@@ -31,10 +31,10 @@ const AboutUs = () => {
       <div className="about-us">
         <h2>About Us</h2>
         <p>
-          Meet our talented team! Meet our talented team! Meet our talented team!
-          Meet our talented team! Meet our talented team! Meet Meet our talented team!
-          Meet our talented team! Meet our talented team! Meet our talented team! Meet our talented team! Meet our talented team!
-          Meet our talented team! Meet our talented team! Meet our talented team! our talented team! Meet our talented team! Meet our talented team!
+        Welcome to Task Master, your ultimate solution for organizing, prioritizing, and achieving your goals. 
+        Our mission is to simplify task management and help individuals and teams stay productive in an ever-busy world.
+        We are a passionate team of developers, designers, and productivity interested committed to transforming how people manage their time and tasks. With a deep understanding of the challenges of modern work,
+         we’ve designed a platform that puts simplicity, efficiency, and collaboration at the forefront.
         </p>
 
         <div className="members">
